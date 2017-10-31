@@ -1,0 +1,22 @@
+1-to change commited text=>
+git commit --amend
+This brings up the editor with the last commit message and lets you edit the message. (You can use -m if you want to wipe out the old message and use a new one.).
+2-to add remote url
+ git remote add origin https://github.com/mayurkothule/react-redux-starter-kit
+3-see user and email set 
+git config --global user.name "Mayur Kothule"
+git config --global user.email "mayurkothule@gmail.com"
+4-commit history => git log
+
+5-step to push code to repository(use your github username and password whenever needed
+	1-initialize git locally =>git init (it will add .git folder in local project to store git history)
+	2-add remote url=>git remote add origin https://github.com/mayurkothule/react-redux-starter-kit(repo url)
+	3-verify remote url =>git config --get remote.origin.url
+	4-add code locally=>git add * 
+	5-commit locally=>git commit -am "your comment"
+	6-pull code before commit (best practice)=>git pull origin master <=your branch name
+	7-push code to repo=>git push origin master
+
+
+
+
