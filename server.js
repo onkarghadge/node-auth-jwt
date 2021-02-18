@@ -1,6 +1,7 @@
 var express=require('express');
 var app=express();
 var mongoose=require('mongoose');
+mongoose.Promise = require('bluebird');
 var bodyParser=require('body-parser');
 var morgan=require('morgan');
 var passport=require('passport');
@@ -21,13 +22,13 @@ app.use(morgan('dev'));
 app.use(passport.initialize());
 
 //connect to db
-mongoose.connect(config.database);
+mongoose.connect(config.database, {useMongoClient:true});
 
 //Bring in passport stategy
 require('./config/passport')(passport);
 
 //Connect to db
-mongoose.connect(config.database);
+mongoose.connect(config.database, {useMongoClient:true});
 
 //Set url for API group routes
 app.use('/api',apiRoutes);
